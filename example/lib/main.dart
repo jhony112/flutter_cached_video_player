@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:cached_video_player/cached_video_player.dart';
 
@@ -57,6 +59,8 @@ class _MyHomePageState extends State<MyHomePage> {
     controller.initialize().then((value) {
       controller.play();
       setState(() {});
+    }).catchError((e,s){
+      log(e.toString(),stackTrace: s);
     });
     super.initState();
   }
@@ -76,11 +80,9 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text(widget.title),
       ),
       body: Center(
-          child: controller.value.isInitialized
-              ? AspectRatio(
+          child:  AspectRatio(
                   aspectRatio: controller.value.aspectRatio,
-                  child: CachedVideoPlayer(controller))
-              : const CircularProgressIndicator()), // This trailing comma makes auto-formatting nicer for build methods.
-    );
+                  child: CachedVideoPlayer(controller)
+    )));
   }
 }

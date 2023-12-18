@@ -16,7 +16,7 @@ flutter:
 
 dependencies:
   meta: ^1.7.0
-  video_player_platform_interface: ^6.0.1
+  video_player_platform_interface: ^6.2.1
 
   # The design on https://flutter.dev/go/federated-plugins was to leave
   # this constraint as "any". We cannot do it right now as it fails pub publish
@@ -34,9 +34,9 @@ dependencies:
 dev_dependencies:
   lints: ^1.0.1
   pedantic: ^1.11.1
-  pigeon: ^3.1.0
+  pigeon: ^15.0.2
 
 environment:
-  sdk: ">=2.14.0 <3.0.0"
+  sdk: ">=2.14.0 <4.0.0"
   flutter: ">=2.10.0"
 
